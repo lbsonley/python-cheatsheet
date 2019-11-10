@@ -111,7 +111,66 @@ We might also want to escape certain characters or encode special characters wit
 """
 )
 
-st.subheader("")
+st.subheader("Lists")
+
+st.write(
+    """
+Lists are ordered collections of information. The information can be of any type and types can even be mixed inside of a list. Most of the time, however, lists only contain data of a single type. To declare a list, square brackets are used `[]`, and the individual values are separated by commas.
+
+We can calculate values from the list, like getting the length of a list by using Python's `len` function, or calculating the sum of all items (only if all items are of type integer) using Python's `sum` function. We can combine the `list()` and `range()` function to generate lists of the length we pass as an argument.
+
+Because lists are ordered collections, each item in a list has an index, starting at zero. Using these indices, we can extract individual values or sub-segments from a list using square brackets. If we only want items from the end of a list, we can use negative indices to count from the back of a list. The last item in a list has index -1. If we want a copy of the original, we just don't specify any indices in the square brackets.
+
+We can check if a value exists in a list by using Python's `in` operator. Or add additional values to the end of a list, a procedure called contatenating, with the list's `extend` method. Beware, the `extend` method will modify your original list. If you don't want that, you can use the `+` operator and assign the result to a new variable.
+
+Python also offers a nice syntax for unpacking values from a list. This is useful when we know the length of the list and want to use the individual values for separate calculations. Sometimes, we only need to use one value from a list, in order to discard the additional values use an underscore as the variable name for the value you want to discard.
+
+```python
+integers = [1, 2, 3]
+list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+integers_len = len(integers)    # 3
+lol_len = len(list_of_lists)    # 3
+
+integers_sum = sum(integers)    # 6
+
+ten = list(range(10))       # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+six = ten[6]                # 6
+six_to_end = ten[6:]        # [6, 7, 8, 9]
+start_to_four = ten[:5]     # [0, 1, 2, 3, 4]
+three_to_six = ten[3:7]     # [3, 4, 5, 6]
+nine = ten[-1]              # 9
+last_three = ten[-3:]       # [7, 8, 9]
+copy_ten = ten[:]           # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+1 in ten                    # True
+11 in ten                   # False
+
+ten.extend([10, 11, 12])    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+11 in ten                   # True
+
+seven = list(range(7))
+new_ten = seven + [8, 9]
+
+results = [80, 90]
+res_one, res_two = results  # res_one equals 80, res_two equals 90
+
+_, important = results      # important equals 90
+```
+    """
+)
+
+integers = [1, 2, 3]
+list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+st.subheader("Tuples")
+
+st.write(
+    """
+Tuples are like lists, only immutable. Immutable means their values cannot be changed.
+    """
+)
 
 st.subheader("Modules")
 
